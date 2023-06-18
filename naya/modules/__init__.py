@@ -13,7 +13,7 @@ from requests import get
 
 from naya import *
 
-BL_UBOT = [-1001812143750]
+BL_UBOT = [-1001864253073]
 
 while 0 < 6:
     _BL_GCAST = get(
@@ -30,6 +30,7 @@ while 0 < 6:
             -1001810928340,
             -1001619428365,
             -1001825363971,
+            -1001864253073,
         ]
         break
     BL_GCAST = _BL_GCAST.json()
