@@ -55,6 +55,7 @@ async def main():
 
 if __name__ == "__main__":
     install()
+    heroku()
     try:
         loop.run_until_complete(main())
     except KeyboardInterrupt:

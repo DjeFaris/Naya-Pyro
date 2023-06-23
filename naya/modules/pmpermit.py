@@ -149,7 +149,8 @@ async def set_limit(client, message):
 
 
 @bots.on_message(
-    filters.private & filters.incoming & ~filters.service & ~filters.me & ~filters.bot
+    filters.private & filters.incoming & ~filters.service & ~filters.me & ~filters.bot,
+    group=69,
 )
 async def handle_pmpermit(client, message):
     user_id = client.me.id

@@ -18,7 +18,8 @@ from . import *
     & filters.mentioned
     & filters.incoming
     & ~filters.bot
-    & ~filters.via_bot
+    & ~filters.via_bot,
+    group=69,
 )
 async def log_tagged_messages(client, message):
     message.chat.id
