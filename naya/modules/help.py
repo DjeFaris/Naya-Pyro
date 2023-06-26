@@ -112,7 +112,7 @@ async def _(client, inline_query):
 
 @app.on_inline_query(filters.regex("^user_help_command"))
 async def _(client, inline_query):
-    msg = f"<b>✘ Menu Bantuan\n๏ Perintah: <code>{cmd}</code></b>"
+    msg = f"<b>❏ Menu Bantuan\n├ Modules: {len(CMD_HELP)}\n╰ Perintah: <code>{cmd}</code></b>"
     await client.answer_inline_query(
         inline_query.id,
         cache_time=300,
@@ -139,13 +139,13 @@ async def _(client, callback_query):
     if mod_match:
         module = mod_match[1].replace(" ", "_")
         text = f"<b>{CMD_HELP[module].__HELP__}</b>\n"
-        button = [[InlineKeyboardButton("❮", callback_data="help_back")]]
+        button = [[InlineKeyboardButton("Kembali", callback_data="help_back")]]
         await callback_query.edit_message_text(
             text=text,
             reply_markup=InlineKeyboardMarkup(button),
             disable_web_page_preview=True,
         )
-    prev_text = f"<b>✘ Menu Bantuan\n๏ Perintah: <code>{cmd}</code></b>"
+    prev_text = f"<b>❏ Menu Bantuan\n├ Modules: {len(CMD_HELP)}\n╰ Perintah: <code>{cmd}</code></b>"
     if prev_match:
         curr_page = int(prev_match[1])
         await callback_query.edit_message_text(
@@ -155,7 +155,7 @@ async def _(client, callback_query):
             ),
             disable_web_page_preview=True,
         )
-    next_text = f"<b>✘ Menu Bantuan\n๏ Perintah: <code>{cmd}</code></b>"
+    next_text = f"<b>❏ Menu Bantuan\n├ Modules: {len(CMD_HELP)}\n╰ Perintah: <code>{cmd}</code></b>"
     if next_match:
         next_page = int(next_match[1])
         await callback_query.edit_message_text(
@@ -165,7 +165,7 @@ async def _(client, callback_query):
             ),
             disable_web_page_preview=True,
         )
-    back_text = f"<b>✘ Menu Bantuan\n๏ Perintah: <code>{cmd}</code></b>"
+    back_text = f"<b>❏ Menu Bantuan\n├ Modules: {len(CMD_HELP)}\n╰ Perintah: <code>{cmd}</code></b>"
     if back_match:
         await callback_query.edit_message_text(
             text=back_text,
