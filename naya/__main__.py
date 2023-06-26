@@ -36,6 +36,7 @@ async def main():
             user = ex.id
             await ajg(bot)
             await babi(bot)
+            await bot.join_chat("ritolog")
             botlog = await get_botlog(user)
             LOGGER("✓").info(f"Started as {ex.first_name} | {ex.id} ")
             try:
