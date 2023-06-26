@@ -48,7 +48,7 @@ async def get_group_call(
         elif isinstance(chat_peer, InputPeerChat):
             full_chat = (
                 await client.send(GetFullChat(chat_id=chat_peer.chat_id))
-            ).full_chat
+                ).full_chat
         if full_chat is not None:
             return full_chat.call
     await eor(message, f"**No group call Found** {err_msg}")
